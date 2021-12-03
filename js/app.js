@@ -29,15 +29,7 @@ const panorama10 = new PANOLENS.ImagePanorama(cenas.cena10);
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
 const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false });
 viewer.add(panorama1);
-viewer.add(panorama2);
-viewer.add(panorama3);
-viewer.add(panorama4);
-viewer.add(panorama5);
-viewer.add(panorama6);
-viewer.add(panorama7);
-viewer.add(panorama8);
-viewer.add(panorama9);
-viewer.add(panorama10);
+
 viewer.setCameraFov(120);
 for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
@@ -252,6 +244,7 @@ createInfospot('videomodal',
 //Create infospot
 function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest) {
   if (typeinfospot == 'nav') {
+    viewer.add(panoramadest);
     const navname = new PANOLENS.Infospot(options.zoom, options.imgico)
     navname.position.set(options.x, options.y, options.z)
     navname.addHoverText(options.title, options.postitle);
