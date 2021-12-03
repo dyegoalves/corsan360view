@@ -1,17 +1,22 @@
+
 const container = document.querySelector('#container');
 var cenas = {
-  cena01: '../img/img1.jpg',
-  cena02: '../img/img2.jpg',
-  cena03: '../img/img3.jpg',
-  cena04: '../img/img4.jpg',
-  cena05: '../img/img5.jpg',
-  cena06: '../img/img6.jpg',
-  cena07: '../img/img6_b.jpg',
-  cena08: '../img/img7.jpg',
-  cena09: '../img/img8_a.jpg',
-  cena10: '../img/img8_b.jpg',
+  cena01:  window.location.origin +  '/img/img1.jpg',
+  cena02:  window.location.origin + '/img/img2.jpg',
+  cena03:  window.location.origin + '/img/img3.jpg',
+  cena04:  window.location.origin + '/img/img4.jpg',
+  cena05:  window.location.origin + '/img/img5.jpg',
+  cena06:  window.location.origin + '/img/img6.jpg',
+  cena07:  window.location.origin + '/img/img6_b.jpg',
+  cena08:  window.location.origin + '/img/img7.jpg',
+  cena09:  window.location.origin + '/img/img8_a.jpg',
+  cena10:  window.location.origin + '/img/img8_b.jpg',
   //cena11: '../img/vid5.mp4',
 }
+
+console.log(window.location.origin);
+console.log(cenas);
+
 const panorama1 = new PANOLENS.ImagePanorama(cenas.cena01);
 const panorama2 = new PANOLENS.ImagePanorama(cenas.cena02);
 const panorama3 = new PANOLENS.ImagePanorama(cenas.cena03);
