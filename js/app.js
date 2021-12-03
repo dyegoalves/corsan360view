@@ -14,7 +14,7 @@ var cenas = {
   //cena11: '../img/vid5.mp4',
 }
 
-console.log(window.location);
+console.log(cenas.cena01);
 
 const panorama1 = new PANOLENS.ImagePanorama(cenas.cena01);
 const panorama2 = new PANOLENS.ImagePanorama(cenas.cena02);
