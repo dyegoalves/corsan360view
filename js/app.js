@@ -1,16 +1,16 @@
 
 const container = document.querySelector('#container');
 var cenas = {
-  cena01: window.location.href+ '/img/img1.jpg',
-  cena02: window.location.href+ '/img/img2.jpg',
-  cena03: window.location.href+ '/img/img3.jpg',
-  cena04: window.location.href+ '/img/img4.jpg',
-  cena05: window.location.href+ '/img/img5.jpg',
-  cena06: window.location.href+ '/img/img6.jpg',
-  cena07: window.location.href+ '/img/img6_b.jpg',
-  cena08: window.location.href+ '/img/img7.jpg',
-  cena09: window.location.href+ '/img/img8_a.jpg',
-  cena10: window.location.href+ '/img/img8_b.jpg',
+  cena01: window.location.href+ 'img/img1.jpg',
+  cena02: window.location.href+ 'img/img2.jpg',
+  cena03: window.location.href+ 'img/img3.jpg',
+  cena04: window.location.href+ 'img/img4.jpg',
+  cena05: window.location.href+ 'img/img5.jpg',
+  cena06: window.location.href+ 'img/img6.jpg',
+  cena07: window.location.href+ 'img/img6_b.jpg',
+  cena08: window.location.href+ 'img/img7.jpg',
+  cena09: window.location.href+ 'img/img8_a.jpg',
+  cena10: window.location.href+ 'img/img8_b.jpg',
   //cena11: '../img/vid5.mp4',
 }
 
