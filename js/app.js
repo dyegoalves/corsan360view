@@ -31,13 +31,13 @@ const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, ro
 viewer.add(panorama1);
 
 viewer.setCameraFov(120);
-for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
+// for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
 //Panorama 1 e infostpots
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 150, y: -10, z: -100,
-    title: 'Navegação: Cena02', postitle: posty
+    title: 'Calha Parshal', postitle: posty
   },
   viewer, panorama1, panorama2
 )
@@ -52,45 +52,6 @@ createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 50, y: -10, z: -100,
     title: 'Rio dos sinos', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Rio dos sinos'
-  },
-  viewer, panorama1, panorama2
-)
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconacao, x: 0, y: -10, z: -100,
-    title: 'Teste ICO ACAO', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Teste ICO ACAO'
-  },
-  viewer, panorama1, panorama2
-)
-
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconimg, x: -50, y: -10, z: -100,
-    title: 'Teste ICO IMG', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Teste ICO IMG'
-  },
-  viewer, panorama1, panorama2
-)
-
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -100, y: -10, z: -100,
-    title: 'Teste ICO BACK', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Teste ICO BACK'
-  },
-  viewer, panorama1, panorama2
-)
-
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Icontxt, x: -150, y: -10, z: -100,
-    title: 'Teste ICO TXT', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Teste ICO TXT'
-  },
-  viewer, panorama1, panorama2
-)
-
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -200, y: -10, z: -100,
-    title: 'Teste ICO VIDEO', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Teste ICO VIDEO'
   },
   viewer, panorama1, panorama2
 )
@@ -248,7 +209,7 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
     const navname = new PANOLENS.Infospot(options.zoom, options.imgico)
     navname.position.set(options.x, options.y, options.z)
     navname.addHoverText(options.title, options.postitle);
-    navname.lockHoverElement();
+    //navname.lockHoverElement();
     navname.show();
     navname.addEventListener('click', () => {
       callpanorama(viewer, panoramadest)
@@ -259,7 +220,7 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
     navname = new PANOLENS.Infospot(options.zoom, options.imgico)
     navname.position.set(options.x, options.y, options.z)
     navname.addHoverText(options.title, options.postitle);
-    navname.lockHoverElement();
+    //navname.lockHoverElement();
     navname.show();
     navname.addEventListener('click', () => {
       callmodalvideo(options.urlvideo, options.titlemodal)
