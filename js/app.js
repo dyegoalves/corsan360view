@@ -33,11 +33,11 @@ viewer.add(panorama1);
 viewer.setCameraFov(120);
 // for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
-//Panorama 1 e infostpots
+//Panorama 1 e infostpots - Captação da água
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 150, y: -10, z: -100,
-    title: 'Calha Parshal', postitle: posty
+    title: 'Prox: Chegada', postitle: posty
   },
   viewer, panorama1, panorama2
 )
@@ -56,14 +56,23 @@ createInfospot('videomodal',
   viewer, panorama1, panorama2
 )
 
-//Panorama 2 e infostpots
+//Panorama 2 e infostpots - Chegada
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena03', postitle: posty
+    title: 'Prox: Floculador', postitle: posty
   },
   viewer, panorama2, panorama3
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -80, y: -10, z: -100,
+    title: 'Voltar: Captação da água', postitle: posty
+  },
+  viewer, panorama2, panorama1
+)
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -80, z: -100,
@@ -72,13 +81,20 @@ createInfospot('videomodal',
   viewer, panorama2, 0
 )
 
-//Panorama 3 e infostpots
+//Panorama 3 e infostpots - Floculador
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena04', postitle: posty
+    title: 'Prox: Decantador', postitle: posty
   },
   viewer, panorama3, panorama4
+)
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -80, y: -10, z: -100,
+    title: 'Voltar: Chegada', postitle: posty
+  },
+  viewer, panorama3, panorama2
 )
 createInfospot('videomodal',
   options = {
@@ -88,14 +104,23 @@ createInfospot('videomodal',
   viewer, panorama3, 0
 )
 
-//Panorama 4 e infostpots
+//Panorama 4 e infostpots - Decantador
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena05', postitle: posty
+    title: 'Prox: Filtro', postitle: posty
   },
   viewer, panorama4, panorama5
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -180, y: -10, z: -100,
+    title: 'Voltar: Floculador', postitle: posty
+  },
+  viewer, panorama4, panorama3
+)
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
@@ -111,14 +136,24 @@ createInfospot('videomodal',
   viewer, panorama4, 0
 )
 
-//Panorama 5 e infostpots
+//Panorama 5 e infostpots - Filtro
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena06', postitle: posty
+    title: 'Prox: Aplicação de Cloro', postitle: posty
   },
   viewer, panorama5, panorama6
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -180, y: -10, z: -100,
+    title: 'Voltar: Decantador', postitle: posty
+  },
+  viewer, panorama5, panorama4
+)
+
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
@@ -134,14 +169,24 @@ createInfospot('videomodal',
   viewer, panorama5, 0
 )
 
-//Panorama 6 e infostpots
+//Panorama 6 e infostpots - Aplicação de Cloro
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena07', postitle: posty
+    title: 'Prox:  Reservatório', postitle: posty
   },
   viewer, panorama6, panorama7
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -180, y: -10, z: -100,
+    title: 'Voltar:  Filtro', postitle: posty
+  },
+  viewer, panorama6, panorama5
+)
+
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
@@ -150,14 +195,23 @@ createInfospot('videomodal',
   viewer, panorama6, 0
 )
 
-//Panorama 7 e infostpots
+//Panorama 7 e infostpots - Reservatório
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena08', postitle: posty
+    title: 'Prox:  Laboratório', postitle: posty
   },
   viewer, panorama7, panorama8
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -230, y: -10, z: -100,
+    title: 'Voltar:  Aplicação de Cloro', postitle: posty
+  },
+  viewer, panorama7, panorama6
+)
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
@@ -173,14 +227,24 @@ createInfospot('videomodal',
   viewer, panorama7, 0
 )
 
-//Panorama 8 e infostpots
+//Panorama 8 e infostpots - Laboratório
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Navegação: Cena01', postitle: posty
+    title: 'Prox: Captação da água', postitle: posty
   },
   viewer, panorama8, panorama1
 )
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -230, y: -10, z: -100,
+    title: 'Voltar:  Reservatório', postitle: posty
+  },
+  viewer, panorama8, panorama7
+)
+
+
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
