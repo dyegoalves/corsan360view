@@ -30,7 +30,7 @@ var progress, progressElement;
 
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
 const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false ,  output: 'console' });
-viewer.add(panorama2);
+viewer.add(panorama1);
 
 viewer.setCameraFov(120);
 // for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
