@@ -31,7 +31,7 @@ viewer.setCameraFov(120);
 // for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
 
-//Panorama 1 e infostpots - Captao da gua
+//Panorama 1 e infostpots - Capta��o da �gua
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 10, y: -10, z: -180,
@@ -42,7 +42,7 @@ createInfospot('nav',
 createInfospot('videomodal',
   options = {
     zoom: 32, imgico: PANOLENS.DataImage.Iconvideo, x: 100, y: -10, z: -100,
-    title: 'Captao', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230150', titlemodal: 'Captao'
+    title: 'Capta��o', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230150', titlemodal: 'Capta��o'
   },
   viewer, panorama1, panorama2
 )
@@ -65,7 +65,7 @@ createInfospot('nav',
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -80, y: -10, z: -100,
-    title: 'Voltar: Captao da gua', postitle: posty
+    title: 'Voltar: Capta��o da �gua', postitle: posty
   },
   viewer, panorama2, panorama1
 )
@@ -134,7 +134,7 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Arrow, x: 80, y: 10, z: 80,
-    title: 'Prox: Aplicao de Cloro --', postitle: posty
+    title: 'Prox: Aplica��o de Cloro --', postitle: posty
   },
   viewer, panorama5, panorama6
 )
@@ -160,7 +160,7 @@ createInfospot('videomodal',
   viewer, panorama5, 0
 )
 
-//Panorama 6 e infostpots - Aplicao de Cloro
+//Panorama 6 e infostpots - Aplica��o de Cloro
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 50, y: -10, z: 100,
@@ -171,7 +171,7 @@ createInfospot('nav',
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Arrow, x: -15, y: 0, z: -100,
-    title: 'Prox:  Reservatrio', postitle: posty
+    title: 'Prox:  Reservat�rio', postitle: posty
   },
   viewer, panorama6, panorama7
 )
@@ -185,7 +185,7 @@ createInfospot('nav',
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 75, y: 20, z: 100,
-    title: 'Depsito de Cloro', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231036', titlemodal: 'Depsito de Cloro'
+    title: 'Dep�sito de Cloro', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231036', titlemodal: 'Dep�sito de Cloro'
   },
   viewer, panorama6, 0
 )
@@ -194,30 +194,30 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: 0, y: -10, z: -100,
-    title: 'Voltar:  Depsito de Cloro', postitle: posty
+    title: 'Voltar:  Dep�sito de Cloro', postitle: posty
   },
   viewer, panorama6b, panorama6
 )
 
-//Panorama 7 e infostpots - Reservatrio
+//Panorama 7 e infostpots - Reservat�rio
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Arrow, x: 50, y: 0, z: -100,
-    title: 'Prox:  Laboratrio', postitle: posty
+    title: 'Prox:  Laborat�rio', postitle: posty
   },
   viewer, panorama7, panorama8
 )
 createInfospot('nav',
   options = {
     zoom: 30, imgico: PANOLENS.DataImage.Iconback, x: 80, y: -10, z: -100,
-    title: 'Voltar:  Aplicao de Cloro', postitle: -70
+    title: 'Voltar:  Aplica��o de Cloro', postitle: -70
   },
   viewer, panorama7, panorama6
 )
 createInfospot('videomodal',
   options = {
     zoom: 30, imgico: PANOLENS.DataImage.Iconvideo, x: 120, y: -10, z: -10,
-    title: 'Reservatrio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231460', titlemodal: 'Reservatrio'
+    title: 'Reservat�rio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231460', titlemodal: 'Reservat�rio'
   },
   viewer, panorama7
 )
@@ -229,32 +229,32 @@ createInfospot('videomodal',
   viewer, panorama7
 )
 
-//Panorama 8 e infostpots - Laboratrio
+//Panorama 8 e infostpots - Laborat�rio
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Iconback, x: -70, y: -10, z: 100,
-    title: 'Voltar:  Reservatrio', postitle: posty
+    title: 'Voltar:  Reservat�rio', postitle: posty
   },
   viewer, panorama8, panorama7
 )
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -100, y: -10, z: -100,
-    title: 'Laboratrio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231111', titlemodal: 'Laboratrio'
+    title: 'Laborat�rio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231111', titlemodal: 'Laborat�rio'
   },
   viewer, panorama8
 )
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 130, y: -10, z: -50,
-    title: 'Supervisrio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231210', titlemodal: 'Supervisrio'
+    title: 'Supervis�rio', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231210', titlemodal: 'Supervis�rio'
   },
   viewer, panorama8
 )
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 150, y: 10, z: 60,
-    title: 'Laboratrio de Bacteriologia ', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231306', titlemodal: 'Laboratrio de Bacteriologia '
+    title: 'Laborat�rio de Bacteriologia ', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231306', titlemodal: 'Laborat�rio de Bacteriologia '
   },
   viewer, panorama8
 )
