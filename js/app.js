@@ -172,7 +172,7 @@ createInfospot('nav',
     zoom: 25, imgico: PANOLENS.DataImage.Arrow, x: -15, y: 0, z: -100,
     title: 'Prox:  Reservatório', postitle: posty
   },
-  viewer, panorama6, panorama6b
+  viewer, panorama6, panorama7
 )
 createInfospot('nav',
   options = {
