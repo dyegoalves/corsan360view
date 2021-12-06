@@ -30,7 +30,7 @@ var progress, progressElement;
 
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
 const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false ,  output: 'console' });
-viewer.add(panorama1);
+viewer.add(panorama2);
 
 viewer.setCameraFov(120);
 // for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
@@ -38,14 +38,14 @@ const posty = 70;
 //Panorama 1 e infostpots - Captação da água
 createInfospot('nav',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 150, y: -10, z: -100,
+    zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 10, y: -10, z: -180,
     title: 'Prox: Chegada', postitle: posty
   },
   viewer, panorama1, panorama2
 )
 createInfospot('videomodal',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -400, y: -1000, z: -100,
+    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 100, y: -10, z: -100,
     title: 'Captação', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230150', titlemodal: 'Captação'
   },
   viewer, panorama1, panorama2
@@ -61,7 +61,7 @@ createInfospot('videomodal',
 //Panorama 2 e infostpots - Chegada
 createInfospot('nav',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
+    zoom: 50, imgico: PANOLENS.DataImage.Arrow, x: 250, y: -10, z: 0,
     title: 'Prox: Floculador', postitle: posty
   },
   viewer, panorama2, panorama3
@@ -77,7 +77,7 @@ createInfospot('nav',
 
 createInfospot('videomodal',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -80, z: -100,
+    zoom: 120, imgico: PANOLENS.DataImage.Iconvideo, x: -680, y: -10, z: 10,
     title: 'Calha Parshal', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230284', titlemodal: 'Calha Parshal'
   },
   viewer, panorama2, 0
