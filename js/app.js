@@ -21,6 +21,7 @@ const panorama6b = new PANOLENS.ImagePanorama(cenas.cena06b);
 const panorama7 = new PANOLENS.ImagePanorama(cenas.cena07);
 const panorama8 = new PANOLENS.ImagePanorama(cenas.cena08a);
 
+var progress, progressElement;
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
 const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false ,  output: 'console' });
 viewer.add(panorama1);
@@ -320,8 +321,6 @@ bntclosemodal.addEventListener("click", function (event) {
   $("#videoModal").modal('hide');
   $("#video").attr("src", "");
 });
-
-var progress, progressElement;
 
 progressElement = document.getElementById( 'progress' );
 function onEnter ( event ) {
