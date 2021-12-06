@@ -1,4 +1,3 @@
-
 const container = document.querySelector('#container');
 var cenas = {
   cena01: window.location.href+ 'img/img1.jpg',
@@ -7,10 +6,9 @@ var cenas = {
   cena04: window.location.href+ 'img/img4.jpg',
   cena05: window.location.href+ 'img/img5.jpg',
   cena06: window.location.href+ 'img/img6.jpg',
-  cena07: window.location.href+ 'img/img6_b.jpg',
-  cena08: window.location.href+ 'img/img7.jpg',
-  cena09: window.location.href+ 'img/img8_a.jpg',
-  cena10: window.location.href+ 'img/img8_b.jpg',
+  cena06b: window.location.href+ 'img/img6_b.jpg',
+  cena07: window.location.href+ 'img/img7.jpg',
+  cena08a: window.location.href+ 'img/img8_a.jpg',
   //cena11: '../img/vid5.mp4',
 }
 
@@ -22,12 +20,16 @@ const panorama3 = new PANOLENS.ImagePanorama(cenas.cena03);
 const panorama4 = new PANOLENS.ImagePanorama(cenas.cena04);
 const panorama5 = new PANOLENS.ImagePanorama(cenas.cena05);
 const panorama6 = new PANOLENS.ImagePanorama(cenas.cena06);
+const panorama6b = new PANOLENS.ImagePanorama(cenas.cena06b);
 const panorama7 = new PANOLENS.ImagePanorama(cenas.cena07);
-const panorama8 = new PANOLENS.ImagePanorama(cenas.cena08);
-const panorama9 = new PANOLENS.ImagePanorama(cenas.cena09);
-const panorama10 = new PANOLENS.ImagePanorama(cenas.cena10);
+const panorama8 = new PANOLENS.ImagePanorama(cenas.cena08a);
+
+var progress, progressElement;
+
+
+
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
-const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false });
+const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false ,  output: 'console' });
 viewer.add(panorama1);
 
 viewer.setCameraFov(120);
@@ -43,14 +45,14 @@ createInfospot('nav',
 )
 createInfospot('videomodal',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 100, y: -10, z: -100,
+    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -400, y: -1000, z: -100,
     title: 'Captação', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230150', titlemodal: 'Captação'
   },
   viewer, panorama1, panorama2
 )
 createInfospot('videomodal',
   options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: 50, y: -10, z: -100,
+    zoom: 50, imgico: PANOLENS.DataImage.Iconvideo, x: -150, y: 10, z:350,
     title: 'Rio dos sinos', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649230010', titlemodal: 'Rio dos sinos'
   },
   viewer, panorama1, panorama2
@@ -153,7 +155,6 @@ createInfospot('nav',
   viewer, panorama5, panorama4
 )
 
-
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
@@ -173,9 +174,9 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-    title: 'Prox:  Reservatório', postitle: posty
+    title: 'Prox:  Tanques de Cloro', postitle: posty
   },
-  viewer, panorama6, panorama7
+  viewer, panorama6, panorama6b
 )
 
 createInfospot('nav',
@@ -186,13 +187,29 @@ createInfospot('nav',
   viewer, panorama6, panorama5
 )
 
+//Panorama 6b e infostpots - Tanques de Cloro
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
+    title: 'Prox:  Reservatório', postitle: posty
+  },
+  viewer, panorama6b, panorama7
+)
+
+createInfospot('nav',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -180, y: -10, z: -100,
+    title: 'Voltar:  Depósito de Cloro', postitle: posty
+  },
+  viewer, panorama6b, panorama6
+)
 
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
-    title: 'Depósito de Cloro', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231036', titlemodal: 'Depósito de Cloro'
+    title: 'TELA 6 B', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231036', titlemodal: 'Depósito de Cloro'
   },
-  viewer, panorama6, 0
+  viewer, panorama6b, 0
 )
 
 //Panorama 7 e infostpots - Reservatório
@@ -209,7 +226,7 @@ createInfospot('nav',
     zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -230, y: -10, z: -100,
     title: 'Voltar:  Aplicação de Cloro', postitle: posty
   },
-  viewer, panorama7, panorama6
+  viewer, panorama7, panorama6b
 )
 
 createInfospot('videomodal',
@@ -217,14 +234,14 @@ createInfospot('videomodal',
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
     title: 'Reservatório', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231460', titlemodal: 'Reservatório'
   },
-  viewer, panorama7, 0
+  viewer, panorama7
 )
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -80, y: -10, z: -100,
     title: 'Estação de bombeamento', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231586', titlemodal: 'Estação de bombeamento'
   },
-  viewer, panorama7, 0
+  viewer, panorama7
 )
 
 //Panorama 8 e infostpots - Laboratório
@@ -243,28 +260,26 @@ createInfospot('nav',
   },
   viewer, panorama8, panorama7
 )
-
-
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -10, y: -10, z: -100,
-    title: 'Laboratório', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231111', titlemodal: 'Reservatório'
+    title: 'Laboratório', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231111', titlemodal: 'Laboratório'
   },
-  viewer, panorama8, 0
-)
-createInfospot('videomodal',
-  options = {
-    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -160, y: -10, z: -100,
-    title: 'Supervisório', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231210', titlemodal: 'Supervisório'
-  },
-  viewer, panorama8, 0
+  viewer, panorama8
 )
 createInfospot('videomodal',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -80, y: -10, z: -100,
-    title: 'Laboratório de Bacteorologia', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231306', titlemodal: 'Laboratório de Bacteorologia'
+    title: 'Supervisório', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231210', titlemodal: 'Supervisório'
   },
-  viewer, panorama8, 0
+  viewer, panorama8
+)
+createInfospot('videomodal',
+  options = {
+    zoom: 35, imgico: PANOLENS.DataImage.Iconvideo, x: -180, y: -10, z: -100,
+    title: 'Laboratório de Bacteriologia ', postitle: posty, urlvideo: 'https://player.vimeo.com/video/649231306', titlemodal: 'Laboratório de Bacteriologia '
+  },
+  viewer, panorama8
 )
 //Create infospot
 function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest) {
@@ -273,7 +288,7 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
     const navname = new PANOLENS.Infospot(options.zoom, options.imgico)
     navname.position.set(options.x, options.y, options.z)
     navname.addHoverText(options.title, options.postitle);
-    //navname.lockHoverElement();
+    navname.lockHoverElement();
     navname.show();
     navname.addEventListener('click', () => {
       callpanorama(viewer, panoramadest)
@@ -284,7 +299,7 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
     navname = new PANOLENS.Infospot(options.zoom, options.imgico)
     navname.position.set(options.x, options.y, options.z)
     navname.addHoverText(options.title, options.postitle);
-    //navname.lockHoverElement();
+    navname.lockHoverElement();
     navname.show();
     navname.addEventListener('click', () => {
       callmodalvideo(options.urlvideo, options.titlemodal)
@@ -294,6 +309,8 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
 }
 //Call Panorama 
 function callpanorama(viewer, panorama) {
+  panorama.addEventListener( 'progress', onProgress );
+  panorama.addEventListener( 'enter', onEnter );
   viewer.setPanorama(panorama);
 }
 //Modal Functions
@@ -310,3 +327,18 @@ bntclosemodal.addEventListener("click", function (event) {
   $("#videoModal").modal('hide');
   $("#video").attr("src", "");
 });
+
+
+progressElement = document.getElementById( 'progress' );
+function onEnter ( event ) {
+  progressElement.style.width = 0;
+  progressElement.classList.remove( 'finish' );
+}
+function onProgress ( event ) {
+  progress = event.progress.loaded / event.progress.total * 100;
+  progressElement.style.width = progress + '%';
+  if ( progress === 100 ) {
+    progressElement.classList.add( 'finish' );
+  }
+}
+

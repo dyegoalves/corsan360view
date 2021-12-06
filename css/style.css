@@ -48,6 +48,22 @@ html, body{
   height: 4em;
 }
 
+#progress {
+  width: 0;
+  height: 5px;
+  position: fixed;
+  top: 0;
+  background: rgb(0, 253, 76);
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+#progress.finish {
+  opacity: 0;
+}
+
+
+
 #container{ 
     width: 100%;
     height: 100%;
