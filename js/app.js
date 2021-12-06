@@ -1,14 +1,14 @@
 const container = document.querySelector('#container');
 var cenas = {
-  cena01: window.location.href+ 'img/img1.jpg',
-  cena02: window.location.href+ 'img/img2.jpg',
-  cena03: window.location.href+ 'img/img3.jpg',
-  cena04: window.location.href+ 'img/img4.jpg',
-  cena05: window.location.href+ 'img/img5.jpg',
-  cena06: window.location.href+ 'img/img6.jpg',
-  cena06b: window.location.href+ 'img/img6_b.jpg',
-  cena07: window.location.href+ 'img/img7.jpg',
-  cena08a: window.location.href+ 'img/img8_a.jpg',
+  cena01:   window.location.href+ 'img/img1.jpg',
+  cena02:   window.location.href+ 'img/img2.jpg',
+  cena03:   window.location.href+ 'img/img3.jpg',
+  cena04:   window.location.href+ 'img/img4.jpg',
+  cena05:   window.location.href+ 'img/img5.jpg',
+  cena06:   window.location.href+ 'img/img6.jpg',
+  cena06b:  window.location.href+ 'img/img6_b.jpg',
+  cena07:   window.location.href+ 'img/img7.jpg',
+  cena08a:  window.location.href+ 'img/img8_a.jpg',
   //cena11: '../img/vid5.mp4',
 }
 const panorama1 = new PANOLENS.ImagePanorama(cenas.cena01);
@@ -30,6 +30,7 @@ viewer.add(panorama1);
 viewer.setCameraFov(120);
 // for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
+
 //Panorama 1 e infostpots - Captação da água
 createInfospot('nav',
   options = {
@@ -229,13 +230,6 @@ createInfospot('videomodal',
 )
 
 //Panorama 8 e infostpots - Laboratório
-// createInfospot('nav',
-//   options = {
-//     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 80, y: -10, z: -100,
-//     title: 'Prox: Captação da água', postitle: posty
-//   },
-//   viewer, panorama8, panorama1
-// )
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Iconback, x: -70, y: -10, z: 100,
@@ -311,7 +305,7 @@ bntclosemodal.addEventListener("click", function (event) {
   $("#videoModal").modal('hide');
   $("#video").attr("src", "");
 });
-
+//Progress load imagens
 progressElement = document.getElementById( 'progress' );
 function onEnter ( event ) {
   progressElement.style.width = 0;
