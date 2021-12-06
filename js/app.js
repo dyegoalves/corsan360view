@@ -11,9 +11,6 @@ var cenas = {
   cena08a: window.location.href+ 'img/img8_a.jpg',
   //cena11: '../img/vid5.mp4',
 }
-
-console.log(cenas.cena01);
-
 const panorama1 = new PANOLENS.ImagePanorama(cenas.cena01);
 const panorama2 = new PANOLENS.ImagePanorama(cenas.cena02);
 const panorama3 = new PANOLENS.ImagePanorama(cenas.cena03);
@@ -23,10 +20,6 @@ const panorama6 = new PANOLENS.ImagePanorama(cenas.cena06);
 const panorama6b = new PANOLENS.ImagePanorama(cenas.cena06b);
 const panorama7 = new PANOLENS.ImagePanorama(cenas.cena07);
 const panorama8 = new PANOLENS.ImagePanorama(cenas.cena08a);
-
-var progress, progressElement;
-
-
 
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
 const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false ,  output: 'console' });
@@ -328,6 +321,7 @@ bntclosemodal.addEventListener("click", function (event) {
   $("#video").attr("src", "");
 });
 
+var progress, progressElement;
 
 progressElement = document.getElementById( 'progress' );
 function onEnter ( event ) {
