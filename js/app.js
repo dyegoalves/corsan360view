@@ -23,19 +23,17 @@ const panorama8 = new PANOLENS.ImagePanorama(cenas.cena08a);
 
 var progress, progressElement;
 //const panorama1 = new PANOLENS.VideoPanorama( cenas.cena11 , { autoplay: true } );
-const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false
-});
-viewer.add(panorama1);
+const viewer = new PANOLENS.Viewer({ controlBar: false, container: container, rotateSpeed: 0.10, autoHideInfospot: false});
 
+viewer.add(panorama1);
 viewer.setCameraFov(120);
-// for (let i = 0; i < cenas.length; i++) { (panorama + i).fadeIn(); }
 const posty = 70;
 
 //Panorama 1 e infostpots - Captação da água
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: 10, y: -10, z: -180,
-    title: 'Prox: Chegada', postitle: posty
+    title: 'Prox: Chegada', postitle: posty , ipos : new THREE.Vector3(-1000, 0, -100)
   },
   viewer, panorama1, panorama2
 )
@@ -58,14 +56,14 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 50, imgico: PANOLENS.DataImage.Arrow, x: 250, y: -10, z: 0,
-    title: 'Prox: Floculador', postitle: posty
+    title: 'Prox: Floculador', postitle: posty , ipos : new THREE.Vector3(-1000, 0, -1000)
   },
   viewer, panorama2, panorama3
 )
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Iconback, x: -80, y: -10, z: -100,
-    title: 'Voltar: Captação da água', postitle: posty
+    title: 'Voltar: Captação da água', postitle: posty , ipos : new THREE.Vector3(0, 0, -100)
   },
   viewer, panorama2, panorama1
 )
@@ -81,7 +79,7 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: -175, y: 5, z: -5,
-    title: 'Prox: Decantador', postitle: posty
+    title: 'Prox: Decantador', postitle: posty , ipos : new THREE.Vector3(-25, 0, -50)
   },
   viewer, panorama3, panorama4
 )
@@ -104,7 +102,7 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 35, imgico: PANOLENS.DataImage.Arrow, x: -10, y: 10, z: 155,
-    title: 'Prox: Filtro', postitle: posty
+    title: 'Prox: Filtro', postitle: posty , ipos : new THREE.Vector3(50, 0, 20)
   },
   viewer, panorama4, panorama5
 )
@@ -141,7 +139,7 @@ createInfospot('nav',
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Iconback, x: 100, y: -20, z: -60,
-    title: 'Voltar: Decantador', postitle: posty
+    title: 'Voltar: Decantador', postitle: posty , ipos : new THREE.Vector3(-10, 0, -15)
   },
   viewer, panorama5, panorama4
 )
@@ -171,7 +169,7 @@ createInfospot('nav',
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Arrow, x: -15, y: 0, z: -100,
-    title: 'Prox:  Reservatório', postitle: posty
+    title: 'Prox:  Reservatório', postitle: posty , ipos : new THREE.Vector3(10, 0, -15)
   },
   viewer, panorama6, panorama7
 )
@@ -233,7 +231,7 @@ createInfospot('videomodal',
 createInfospot('nav',
   options = {
     zoom: 25, imgico: PANOLENS.DataImage.Iconback, x: -70, y: -10, z: 100,
-    title: 'Voltar:  Reservatório', postitle: posty
+    title: 'Voltar:  Reservatório', postitle: posty , ipos : new THREE.Vector3(100, 0, -10)
   },
   viewer, panorama8, panorama7
 )
@@ -269,7 +267,7 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
     navname.lockHoverElement();
     navname.show();
     navname.addEventListener('click', () => {
-      callpanorama(viewer, panoramadest)
+      callpanorama(viewer, panoramadest , options)
     });
     panoramaorg.add(navname);
   }
@@ -286,17 +284,21 @@ function createInfospot(typeinfospot, options, viewer, panoramaorg, panoramadest
   }
 }
 //Call Panorama 
-function callpanorama(viewer, panorama) {
-  panorama.addEventListener( 'progress', onProgress );
-  panorama.addEventListener( 'enter', onEnter );
+function callpanorama(viewer, panorama, options) { 
   viewer.setPanorama(panorama);
+  panorama.addEventListener('progress', onProgress );
+  panorama.addEventListener('enter', onEnter)
+  panorama.addEventListener('enter-fade-start' , () => {
+      if(options.ipos !== undefined){
+        viewer.tweenControlCenter( options.ipos, 0 );
+      }     
+  })
 }
 //Modal Functions
 function callmodalvideo(video, titlemodal) {
   $("#video").attr("src", video);
   //Modal show()
   $("#videoModal").modal({ backdrop: 'static', keyboard: false });
-  //$("#mapModal").modal({ backdrop: 'static', keyboard: false });
   document.querySelector("#titlemodal").innerHTML = titlemodal;
 }
 //Modal close()
