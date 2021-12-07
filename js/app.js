@@ -321,3 +321,27 @@ function onProgress ( event ) {
     progressElement.classList.add( 'finish' );
   }
 }
+
+const p1 = document.getElementById( 'p1' );
+p1.addEventListener("click", function (event) {
+  event.preventDefault();
+  panorama1.fadeIn();
+  viewer.setPanorama(panorama1);
+  $("#mapModal").modal('hide');
+});
+
+const p2 = document.getElementById( 'p2' );
+p2.addEventListener("click", function (event) {
+  event.preventDefault();
+  viewer.setPanorama(panorama2);
+  panorama2.fadeIn();
+  $("#mapModal").modal('hide');
+});
+
+const p3 = document.getElementById( 'p3' );
+p3.addEventListener("click", function (event) {
+  event.preventDefault();
+  panorama3.fadeIn();
+  viewer.setPanorama(panorama3);
+  $("#mapModal").modal('hide');
+});
