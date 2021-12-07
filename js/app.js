@@ -313,6 +313,7 @@ function onEnter ( event ) {
   progressElement.style.width = 0;
   progressElement.classList.remove( 'finish' );
 }
+
 function onProgress ( event ) {
   progress = event.progress.loaded / event.progress.total * 100;
   progressElement.style.width = progress + '%';
